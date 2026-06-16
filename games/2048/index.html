@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f2e8">
+  <meta name="description" content="经典 2048 数字合成小游戏，支持键盘和触屏操作。">
+  <title>2048 | WebGame 小游戏合集</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <nav class="game-nav" aria-label="游戏导航">
+      <a href="../../">← 返回小游戏合集</a>
+      <span>WebGame</span>
+    </nav>
+
+    <aside class="ad-slot ad-slot-top" aria-label="广告位">
+      <span>广告位</span>
+      <strong>游戏页顶部横幅</strong>
+      <small>预留广告代码位置</small>
+    </aside>
+
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">数字合成挑战</p>
+        <h1>2048</h1>
+      </div>
+      <div class="score-group" aria-label="游戏分数">
+        <div class="score-card">
+          <span>分数</span>
+          <strong id="score">0</strong>
+          <b id="score-add" aria-hidden="true"></b>
+        </div>
+        <div class="score-card">
+          <span>最高</span>
+          <strong id="best-score">0</strong>
+        </div>
+      </div>
+    </header>
+
+    <section class="intro">
+      <p>滑动方块，合并相同数字，试着拼出 <strong>2048</strong>。</p>
+      <div class="actions">
+        <button id="undo-button" class="button button-secondary" type="button">撤销</button>
+        <button id="new-game-button" class="button button-primary" type="button">新游戏</button>
+      </div>
+    </section>
+
+    <section class="game-shell" aria-label="2048 游戏区域">
+      <div id="game-board" class="game-board" role="grid" aria-label="4 乘 4 的数字棋盘">
+        <div class="grid-background" aria-hidden="true">
+          <div></div><div></div><div></div><div></div>
+          <div></div><div></div><div></div><div></div>
+          <div></div><div></div><div></div><div></div>
+          <div></div><div></div><div></div><div></div>
+        </div>
+        <div id="tile-container" class="tile-container"></div>
+      </div>
+
+      <div id="game-message" class="game-message" hidden>
+        <div class="message-card">
+          <p id="message-kicker">本局结束</p>
+          <h2 id="message-title">游戏结束</h2>
+          <p id="message-text">再试一次，你一定可以合成更大的数字。</p>
+          <div class="message-actions">
+            <button id="keep-playing-button" class="button button-secondary" type="button">继续挑战</button>
+            <button id="try-again-button" class="button button-primary" type="button">再来一局</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tips">
+      <div class="tip-icon" aria-hidden="true">?</div>
+      <p><strong>玩法：</strong>电脑使用方向键或 WASD，手机直接在棋盘上滑动。两个相同数字相撞时会合并。</p>
+    </section>
+
+    <aside class="ad-slot ad-slot-bottom" aria-label="广告位">
+      <span>广告位</span>
+      <strong>游戏页底部推荐位</strong>
+      <small>后续可放广告、推荐游戏或赞助信息</small>
+    </aside>
+
+    <footer>
+      <p>每一步都算数，祝你玩得开心。</p>
+    </footer>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>

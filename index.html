@@ -2,74 +2,94 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#f7f2e8">
-  <meta name="description" content="经典 2048 数字合成小游戏，支持键盘和触屏操作。">
-  <title>2048 | 数字合成小游戏</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <meta name="description" content="WebGame 是一个轻量小游戏合集，当前包含 2048，后续会持续增加更多网页小游戏。">
+  <title>WebGame | 小游戏合集</title>
+  <link rel="stylesheet" href="styles/site.css">
 </head>
 <body>
-  <main class="app">
-    <header class="topbar">
-      <div>
-        <p class="eyebrow">数字合成挑战</p>
-        <h1>2048</h1>
-      </div>
-      <div class="score-group" aria-label="游戏分数">
-        <div class="score-card">
-          <span>分数</span>
-          <strong id="score">0</strong>
-          <b id="score-add" aria-hidden="true"></b>
-        </div>
-        <div class="score-card">
-          <span>最高</span>
-          <strong id="best-score">0</strong>
-        </div>
-      </div>
-    </header>
+  <header class="site-hero">
+    <nav class="site-nav" aria-label="主导航">
+      <a class="brand" href="./">WebGame</a>
+      <a href="#games">小游戏</a>
+      <a href="#about">关于</a>
+    </nav>
 
-    <section class="intro">
-      <p>滑动方块，合并相同数字，试着拼出 <strong>2048</strong>。</p>
-      <div class="actions">
-        <button id="undo-button" class="button button-secondary" type="button">撤销</button>
-        <button id="new-game-button" class="button button-primary" type="button">新游戏</button>
-      </div>
-    </section>
-
-    <section class="game-shell" aria-label="2048 游戏区域">
-      <div id="game-board" class="game-board" role="grid" aria-label="4 乘 4 的数字棋盘">
-        <div class="grid-background" aria-hidden="true">
-          <div></div><div></div><div></div><div></div>
-          <div></div><div></div><div></div><div></div>
-          <div></div><div></div><div></div><div></div>
-          <div></div><div></div><div></div><div></div>
+    <div class="hero-grid">
+      <section class="hero-copy">
+        <p class="eyebrow">轻量 · 免费 · 打开就能玩</p>
+        <h1>小游戏合集</h1>
+        <p class="hero-text">这里会慢慢收集适合电脑和手机玩的网页小游戏。目前第一款是经典 2048，后续可以继续加入反应、益智、休闲类小游戏。</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="games/2048/">开始玩 2048</a>
+          <a class="button button-secondary" href="#games">查看游戏列表</a>
         </div>
-        <div id="tile-container" class="tile-container"></div>
+      </section>
+
+      <aside class="ad-slot ad-slot-hero" aria-label="广告位">
+        <span>广告位</span>
+        <strong>Hero Banner</strong>
+        <small>预留 728 x 90 / 响应式广告代码</small>
+      </aside>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <section id="games" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Game Library</p>
+        <h2>游戏列表</h2>
+        <p>后续新增游戏时，在这里增加一张卡片，再放入对应的 `games/游戏名/` 目录。</p>
       </div>
 
-      <div id="game-message" class="game-message" hidden>
-        <div class="message-card">
-          <p id="message-kicker">本局结束</p>
-          <h2 id="message-title">游戏结束</h2>
-          <p id="message-text">再试一次，你一定可以合成更大的数字。</p>
-          <div class="message-actions">
-            <button id="keep-playing-button" class="button button-secondary" type="button">继续挑战</button>
-            <button id="try-again-button" class="button button-primary" type="button">再来一局</button>
+      <div class="game-grid">
+        <article class="game-card">
+          <div class="game-cover game-cover-2048" aria-hidden="true">
+            <span>2</span><span>4</span><span>8</span><span>16</span>
           </div>
-        </div>
+          <div class="game-card-body">
+            <p class="game-tag">益智 · 数字合成</p>
+            <h3>2048</h3>
+            <p>滑动方块，合并相同数字，挑战合成 2048 和更高分。</p>
+            <a class="button button-primary" href="games/2048/">进入游戏</a>
+          </div>
+        </article>
+
+        <article class="game-card game-card-placeholder">
+          <div class="game-cover placeholder-cover" aria-hidden="true">+</div>
+          <div class="game-card-body">
+            <p class="game-tag">Coming Soon</p>
+            <h3>下一款小游戏</h3>
+            <p>这里预留给后续新增游戏，比如贪吃蛇、记忆翻牌、打砖块等。</p>
+            <span class="button button-disabled">开发中</span>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="tips">
-      <div class="tip-icon" aria-hidden="true">?</div>
-      <p><strong>玩法：</strong>电脑使用方向键或 WASD，手机直接在棋盘上滑动。两个相同数字相撞时会合并。</p>
-    </section>
+    <aside class="ad-slot ad-slot-wide" aria-label="广告位">
+      <span>广告位</span>
+      <strong>列表页横幅</strong>
+      <small>后续可替换为真实广告脚本</small>
+    </aside>
 
-    <footer>
-      <p>每一步都算数，祝你玩得开心。</p>
-    </footer>
+    <section id="about" class="section about-panel">
+      <div>
+        <p class="eyebrow">Roadmap</p>
+        <h2>为后续扩展预留空间</h2>
+      </div>
+      <ul class="roadmap">
+        <li>每款游戏独立放在 `games/` 下，互不干扰。</li>
+        <li>首页只负责展示入口、分类和广告位。</li>
+        <li>广告位先用占位组件，接入广告平台时改动范围很小。</li>
+        <li>后续可以增加排行榜、分类页、搜索、收藏等功能。</li>
+      </ul>
+    </section>
   </main>
 
-  <script src="game.js"></script>
+  <footer class="site-footer">
+    <p>WebGame 小游戏合集 · 持续更新中</p>
+  </footer>
 </body>
 </html>

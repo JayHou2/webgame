@@ -32,10 +32,77 @@ button {
   font: inherit;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .app {
   width: min(92vw, 550px);
   margin: 0 auto;
   padding: max(24px, env(safe-area-inset-top)) 0 max(24px, env(safe-area-inset-bottom));
+}
+
+.game-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 44px;
+  margin-bottom: 14px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.game-nav a {
+  color: var(--accent-dark);
+}
+
+.game-nav a:hover {
+  text-decoration: underline;
+}
+
+.ad-slot {
+  display: grid;
+  min-height: 96px;
+  place-items: center;
+  margin: 0 0 20px;
+  padding: 16px;
+  border: 1px solid rgba(164, 125, 53, 0.18);
+  border-radius: 16px;
+  color: #8a6a2f;
+  text-align: center;
+  background:
+    linear-gradient(135deg, rgba(255, 236, 179, 0.7), rgba(255, 250, 235, 0.86)),
+    repeating-linear-gradient(45deg, transparent 0 12px, rgba(255, 193, 7, 0.1) 12px 24px);
+}
+
+.ad-slot span,
+.ad-slot small {
+  display: block;
+}
+
+.ad-slot span {
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.ad-slot strong {
+  display: block;
+  margin: 5px 0;
+  font-size: 1rem;
+}
+
+.ad-slot small {
+  color: rgba(138, 106, 47, 0.75);
+  font-size: 0.78rem;
+}
+
+.ad-slot-bottom {
+  margin: 22px 0 0;
 }
 
 .topbar,
