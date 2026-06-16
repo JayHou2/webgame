@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#070812">
+  <meta name="description" content="霓虹风格俄罗斯方块小游戏，支持键盘和触屏操作。">
+  <title>Neon Blocks | WebGame 小游戏合集</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-page">
+    <nav class="game-nav" aria-label="游戏导航">
+      <a href="../../">← 返回小游戏合集</a>
+      <span>WebGame</span>
+    </nav>
+
+    <section class="hero-panel">
+      <div>
+        <p class="eyebrow">Neon Blocks</p>
+        <h1>霓虹方块</h1>
+        <p>高速、发光、带一点未来感的俄罗斯方块。目标渲染上限 90 FPS，设备不支持时会自动跟随浏览器刷新率。</p>
+      </div>
+      <aside class="ad-slot" aria-label="广告位">
+        <span>广告位</span>
+        <strong>游戏页顶部横幅</strong>
+        <small>预留响应式广告代码</small>
+      </aside>
+    </section>
+
+    <section class="play-layout">
+      <aside class="side-panel">
+        <div class="mini-card">
+          <span>Hold</span>
+          <canvas id="hold-canvas" width="96" height="96" aria-label="保留方块"></canvas>
+        </div>
+        <div class="stat-grid">
+          <div><span>分数</span><strong id="score">0</strong></div>
+          <div><span>等级</span><strong id="level">1</strong></div>
+          <div><span>消除</span><strong id="lines">0</strong></div>
+          <div><span>FPS</span><strong id="fps">90</strong></div>
+        </div>
+      </aside>
+
+      <section class="board-shell" aria-label="霓虹方块游戏区域">
+        <canvas id="game-canvas" width="360" height="720"></canvas>
+        <div id="overlay" class="overlay">
+          <p id="overlay-kicker">Ready</p>
+          <h2 id="overlay-title">准备开始</h2>
+          <p id="overlay-text">方向键或 WASD 移动，空格瞬间下落。</p>
+          <button id="start-button" type="button">启动霓虹引擎</button>
+        </div>
+      </section>
+
+      <aside class="side-panel">
+        <div class="mini-card">
+          <span>Next</span>
+          <canvas id="next-canvas" width="120" height="288" aria-label="下一个方块"></canvas>
+        </div>
+        <div class="controls-card">
+          <h2>操作</h2>
+          <p>← → / A D：移动</p>
+          <p>↑ / W / E：旋转</p>
+          <p>↓ / S：加速</p>
+          <p>Space：瞬间下落</p>
+          <p>C / Shift：保留方块</p>
+          <p>P：暂停</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="touch-controls" aria-label="触屏控制">
+      <button type="button" data-action="left">←</button>
+      <button type="button" data-action="rotate">旋转</button>
+      <button type="button" data-action="right">→</button>
+      <button type="button" data-action="soft">↓</button>
+      <button type="button" data-action="drop">Drop</button>
+      <button type="button" data-action="hold">Hold</button>
+    </section>
+
+    <aside class="ad-slot ad-slot-bottom" aria-label="广告位">
+      <span>广告位</span>
+      <strong>游戏页底部推荐位</strong>
+      <small>后续可放广告、推荐游戏或活动入口</small>
+    </aside>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>

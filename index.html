@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#111827">
-  <meta name="description" content="WebGame 是一个轻量小游戏合集，当前包含 2048，后续会持续增加更多网页小游戏。">
+  <meta name="description" content="WebGame 是一个轻量小游戏合集，包含 2048、霓虹方块等网页小游戏，后续会持续更新。">
   <title>WebGame | 小游戏合集</title>
   <link rel="stylesheet" href="styles/site.css">
 </head>
@@ -20,10 +20,10 @@
       <section class="hero-copy">
         <p class="eyebrow">轻量 · 免费 · 打开就能玩</p>
         <h1>小游戏合集</h1>
-        <p class="hero-text">这里会慢慢收集适合电脑和手机玩的网页小游戏。目前第一款是经典 2048，后续可以继续加入反应、益智、休闲类小游戏。</p>
+        <p class="hero-text">这里会慢慢收集适合电脑和手机玩的网页小游戏。现在已经有 2048 和霓虹风格俄罗斯方块，后续还会继续加入更多休闲、益智和反应类小游戏。</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="games/2048/">开始玩 2048</a>
-          <a class="button button-secondary" href="#games">查看游戏列表</a>
+          <a class="button button-primary" href="games/tetris/">玩霓虹方块</a>
+          <a class="button button-secondary" href="games/2048/">玩 2048</a>
         </div>
       </section>
 
@@ -40,10 +40,23 @@
       <div class="section-heading">
         <p class="eyebrow">Game Library</p>
         <h2>游戏列表</h2>
-        <p>后续新增游戏时，在这里增加一张卡片，再放入对应的 `games/游戏名/` 目录。</p>
+        <p>每款游戏都独立放在 `games/` 目录下。后续新增游戏时，只需要增加子目录和这里的入口卡片。</p>
       </div>
 
       <div class="game-grid">
+        <article class="game-card">
+          <div class="game-cover game-cover-tetris" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <div class="game-card-body">
+            <p class="game-tag">动作 · 消除 · 霓虹</p>
+            <h3>霓虹方块</h3>
+            <p>未来感俄罗斯方块玩法，带发光方块、幽灵落点、保留方块和 90 FPS 渲染目标。</p>
+            <a class="button button-primary" href="games/tetris/">进入游戏</a>
+          </div>
+        </article>
+
         <article class="game-card">
           <div class="game-cover game-cover-2048" aria-hidden="true">
             <span>2</span><span>4</span><span>8</span><span>16</span>
@@ -61,7 +74,7 @@
           <div class="game-card-body">
             <p class="game-tag">Coming Soon</p>
             <h3>下一款小游戏</h3>
-            <p>这里预留给后续新增游戏，比如贪吃蛇、记忆翻牌、打砖块等。</p>
+            <p>这里预留给后续新增游戏，比如记忆翻牌、打砖块、反应挑战等。</p>
             <span class="button button-disabled">开发中</span>
           </div>
         </article>
