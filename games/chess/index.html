@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#1f2937">
+  <meta name="description" content="本地双人国际象棋小游戏，支持电脑和移动端点击走棋。">
+  <title>国际象棋 | WebGame 小游戏合集</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="chess-page">
+    <nav class="game-nav" aria-label="游戏导航">
+      <a href="../../">← 返回小游戏合集</a>
+      <span>WebGame</span>
+    </nav>
+
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Classic Chess</p>
+        <h1>国际象棋</h1>
+        <p>本地双人对弈版。点击棋子，再点击目标格即可走棋；支持将军、将死、王车易位、兵升变和移动端触控。</p>
+      </div>
+      <aside class="ad-slot" aria-label="广告位">
+        <span>广告位</span>
+        <strong>棋类页顶部横幅</strong>
+        <small>预留响应式广告代码</small>
+      </aside>
+    </section>
+
+    <section class="play-layout">
+      <aside class="side-panel">
+        <div class="status-card">
+          <span id="turn-label">白方回合</span>
+          <strong id="status-title">请选择白方棋子</strong>
+          <p id="status-text">白方先行。点击棋子后，合法目标格会高亮。</p>
+        </div>
+
+        <div class="captured-card">
+          <h2>白方吃子</h2>
+          <div id="captured-white" class="captured-list"></div>
+        </div>
+
+        <div class="actions">
+          <button id="new-game-button" type="button">新棋局</button>
+          <button id="undo-button" type="button">悔棋</button>
+        </div>
+      </aside>
+
+      <section class="board-shell" aria-label="国际象棋棋盘">
+        <div id="board" class="board" role="grid" aria-label="8 乘 8 国际象棋棋盘"></div>
+      </section>
+
+      <aside class="side-panel">
+        <div class="captured-card">
+          <h2>黑方吃子</h2>
+          <div id="captured-black" class="captured-list"></div>
+        </div>
+
+        <div class="moves-card">
+          <h2>走棋记录</h2>
+          <ol id="move-list"></ol>
+        </div>
+      </aside>
+    </section>
+
+    <aside class="ad-slot ad-slot-bottom" aria-label="广告位">
+      <span>广告位</span>
+      <strong>棋类页底部推荐位</strong>
+      <small>可以放广告、推荐游戏或活动入口。</small>
+    </aside>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>

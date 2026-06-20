@@ -1,6 +1,6 @@
 # WebGame 小游戏合集
 
-一个零依赖、适合 GitHub Pages 免费托管的网页小游戏合集。当前包含蛇蛇能量战、2048 和霓虹方块，后续可以继续添加更多小游戏。
+一个零依赖、适合 GitHub Pages 免费托管的网页小游戏合集。当前包含蛇蛇能量战、国际象棋、2048 和霓虹方块，后续可以继续添加更多小游戏。
 
 在线访问：
 
@@ -11,6 +11,7 @@ https://jayhou2.github.io/webgame/
 ## 当前游戏
 
 - 蛇蛇能量战：`games/snake-arena/`
+- 国际象棋：`games/chess/`
 - 霓虹方块：`games/tetris/`
 - 2048：`games/2048/`
 
@@ -18,28 +19,46 @@ https://jayhou2.github.io/webgame/
 
 ```text
 .
-├── index.html              # 小游戏合集首页
-├── styles/
-│   └── site.css            # 合集首页样式
-├── games/
-│   ├── snake-arena/
-│   │   ├── index.html      # 蛇蛇能量战游戏页
-│   │   ├── style.css       # 蛇蛇能量战样式
-│   │   └── game.js         # 蛇蛇能量战逻辑
-│   ├── tetris/
-│   │   ├── index.html      # 霓虹方块游戏页
-│   │   ├── style.css       # 霓虹方块样式
-│   │   └── game.js         # 霓虹方块逻辑
-│   └── 2048/
-│       ├── index.html      # 2048 游戏页
-│       ├── style.css       # 2048 游戏样式
-│       └── game.js         # 2048 游戏逻辑
-└── README.md
+|-- index.html              # 小游戏合集首页
+|-- styles/
+|   `-- site.css            # 合集首页样式
+|-- games/
+|   |-- snake-arena/
+|   |   |-- index.html
+|   |   |-- style.css
+|   |   `-- game.js
+|   |-- chess/
+|   |   |-- index.html
+|   |   |-- style.css
+|   |   `-- game.js
+|   |-- tetris/
+|   |   |-- index.html
+|   |   |-- style.css
+|   |   `-- game.js
+|   `-- 2048/
+|       |-- index.html
+|       |-- style.css
+|       `-- game.js
+`-- README.md
 ```
+
+## 国际象棋说明
+
+`games/chess/` 是本地双人对战版本，支持电脑和手机浏览器。
+
+已包含功能：
+
+- 点击棋子后高亮合法目标格
+- 将军、将死、逼和判断
+- 王车易位
+- 吃过路兵
+- 兵升变为后
+- 悔棋和重新开局
+- 吃子记录和走法列表
 
 ## 霓虹方块说明
 
-`games/tetris/game.js` 使用 `requestAnimationFrame` 驱动渲染，并把渲染目标上限设为 `TARGET_FPS = 90`。实际帧数仍取决于玩家设备、浏览器和屏幕刷新率；如果设备只能稳定 60 FPS，浏览器会自动按实际能力运行。
+`games/tetris/game.js` 使用 `requestAnimationFrame` 驱动渲染，并把渲染目标上限设为 `TARGET_FPS = 90`。实际帧数仍取决于玩家设备、浏览器和屏幕刷新率；如果设备只能稳定 60 FPS，浏览器会按实际能力运行。
 
 已包含功能：
 
@@ -64,8 +83,7 @@ https://jayhou2.github.io/webgame/
 
 - 首页顶部 Hero 广告位
 - 首页游戏列表下方横幅广告位
-- 2048 游戏页顶部/底部广告位
-- 霓虹方块游戏页顶部/底部广告位
+- 各游戏页面顶部和底部广告位
 
 后续接入广告平台时，可以把 `.ad-slot` 内部的占位文案替换成广告脚本或广告容器。
 
@@ -77,7 +95,7 @@ https://jayhou2.github.io/webgame/
 python -m http.server 8000
 ```
 
-然后访问：
+如果电脑没有安装 Python，也可以用 Codex 自带的运行时或其他静态服务器。然后访问：
 
 ```text
 http://localhost:8000
