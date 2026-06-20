@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#8ed9ff">
+  <meta name="description" content="原创蛇类竞技小游戏，吃能量、变长、躲避对手，挑战排行榜。">
+  <title>蛇蛇能量战 | WebGame 小游戏合集</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="arena-page">
+    <nav class="game-nav" aria-label="游戏导航">
+      <a href="../../">← 返回小游戏合集</a>
+      <span>WebGame</span>
+    </nav>
+
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Snake Arena</p>
+        <h1>蛇蛇能量战</h1>
+        <p>原创蛇类竞技玩法：吃能量球变长，绕开其他蛇，诱导对手撞车，冲击排行榜。电脑和手机都能玩。</p>
+      </div>
+      <aside class="ad-slot" aria-label="广告位">
+        <span>广告位</span>
+        <strong>竞技页顶部横幅</strong>
+        <small>预留响应式广告代码</small>
+      </aside>
+    </section>
+
+    <section class="game-layout">
+      <aside class="side-panel">
+        <div class="score-card">
+          <span>长度</span>
+          <strong id="length-value">18</strong>
+        </div>
+        <div class="score-card">
+          <span>击败</span>
+          <strong id="kills-value">0</strong>
+        </div>
+        <div class="score-card">
+          <span>速度</span>
+          <strong id="speed-value">1.0x</strong>
+        </div>
+      </aside>
+
+      <section class="arena-shell" aria-label="蛇蛇能量战游戏区域">
+        <canvas id="arena" width="960" height="640"></canvas>
+        <div id="overlay" class="overlay">
+          <p id="overlay-kicker">Ready</p>
+          <h2 id="overlay-title">准备进入竞技场</h2>
+          <p id="overlay-text">鼠标移动控制方向，按住鼠标或空格加速。手机可用下方摇杆。</p>
+          <button id="start-button" type="button">开始游戏</button>
+        </div>
+      </section>
+
+      <aside class="side-panel">
+        <div class="rank-card">
+          <h2>排行榜</h2>
+          <ol id="leaderboard"></ol>
+        </div>
+        <div class="tips-card">
+          <h2>操作</h2>
+          <p>鼠标 / 触屏：控制方向</p>
+          <p>空格 / 按住：加速冲刺</p>
+          <p>P：暂停</p>
+          <p>R：重新开始</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="touch-zone" aria-label="触屏控制">
+      <div id="joystick" class="joystick">
+        <span id="joystick-knob"></span>
+        <b>拖动控制方向</b>
+      </div>
+      <button id="boost-button" type="button">加速</button>
+    </section>
+
+    <aside class="ad-slot ad-slot-bottom" aria-label="广告位">
+      <span>广告位</span>
+      <strong>竞技页底部推荐位</strong>
+      <small>后续可放广告、推荐游戏或活动入口</small>
+    </aside>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>

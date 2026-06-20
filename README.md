@@ -1,6 +1,6 @@
 # WebGame 小游戏合集
 
-一个零依赖、适合 GitHub Pages 免费托管的网页小游戏合集。当前包含 2048 和霓虹方块，后续可以继续添加更多小游戏。
+一个零依赖、适合 GitHub Pages 免费托管的网页小游戏合集。当前包含蛇蛇能量战、2048 和霓虹方块，后续可以继续添加更多小游戏。
 
 在线访问：
 
@@ -10,6 +10,7 @@ https://jayhou2.github.io/webgame/
 
 ## 当前游戏
 
+- 蛇蛇能量战：`games/snake-arena/`
 - 霓虹方块：`games/tetris/`
 - 2048：`games/2048/`
 
@@ -21,6 +22,10 @@ https://jayhou2.github.io/webgame/
 ├── styles/
 │   └── site.css            # 合集首页样式
 ├── games/
+│   ├── snake-arena/
+│   │   ├── index.html      # 蛇蛇能量战游戏页
+│   │   ├── style.css       # 蛇蛇能量战样式
+│   │   └── game.js         # 蛇蛇能量战逻辑
 │   ├── tetris/
 │   │   ├── index.html      # 霓虹方块游戏页
 │   │   ├── style.css       # 霓虹方块样式

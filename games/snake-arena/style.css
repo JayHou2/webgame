@@ -1,0 +1,356 @@
+:root {
+  --sky: #8ed9ff;
+  --sky-deep: #4fb2ec;
+  --ink: #1d3557;
+  --muted: #58708f;
+  --panel: rgba(255, 255, 255, 0.76);
+  --line: rgba(29, 53, 87, 0.12);
+  --yellow: #ffe252;
+  --orange: #ff9448;
+  --pink: #ff4fb8;
+  --green: #44d08a;
+  --radius: 24px;
+  font-family: Inter, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--sky);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at 18% 8%, rgba(255, 255, 255, 0.9), transparent 24rem),
+    radial-gradient(circle at 88% 18%, rgba(255, 226, 82, 0.4), transparent 28rem),
+    linear-gradient(145deg, #9ce3ff, #6cc8f7 58%, #8ed9ff);
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.22) 1px, transparent 1.5px);
+  background-size: 18px 18px;
+  opacity: 0.65;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+.arena-page {
+  width: min(1240px, calc(100% - 24px));
+  margin: 0 auto;
+  padding: max(16px, env(safe-area-inset-top)) 0 max(22px, env(safe-area-inset-bottom));
+}
+
+.game-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 42px;
+  color: rgba(29, 53, 87, 0.72);
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.game-nav a {
+  color: #0b73ba;
+}
+
+.hero,
+.side-panel,
+.arena-shell,
+.ad-slot,
+.touch-zone {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  box-shadow: 0 22px 56px rgba(35, 91, 135, 0.18), inset 0 1px rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(14px);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 380px);
+  gap: 18px;
+  align-items: stretch;
+  margin: 16px 0;
+  padding: clamp(20px, 4vw, 34px);
+  border-radius: var(--radius);
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #0b73ba;
+  font-size: 0.76rem;
+  font-weight: 1000;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 12px;
+  color: #11365f;
+  font-size: clamp(3rem, 8vw, 6.2rem);
+  line-height: 0.9;
+  letter-spacing: -0.08em;
+  text-shadow: 0 4px rgba(255, 255, 255, 0.65);
+}
+
+.hero p:not(.eyebrow),
+.tips-card p,
+.ad-slot small {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.ad-slot {
+  display: grid;
+  min-height: 112px;
+  place-items: center;
+  padding: 18px;
+  border-radius: 20px;
+  color: #86560d;
+  text-align: center;
+  background:
+    linear-gradient(135deg, rgba(255, 226, 82, 0.56), rgba(255, 255, 255, 0.62)),
+    repeating-linear-gradient(45deg, transparent 0 12px, rgba(255, 148, 72, 0.12) 12px 24px);
+}
+
+.ad-slot span {
+  display: block;
+  color: #9a5a00;
+  font-size: 0.72rem;
+  font-weight: 1000;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.ad-slot strong {
+  display: block;
+  margin: 7px 0;
+}
+
+.game-layout {
+  display: grid;
+  grid-template-columns: 180px minmax(360px, 1fr) 220px;
+  gap: 14px;
+  align-items: start;
+}
+
+.side-panel {
+  display: grid;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 22px;
+}
+
+.score-card,
+.rank-card,
+.tips-card {
+  border: 1px solid rgba(29, 53, 87, 0.1);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.score-card {
+  padding: 14px;
+}
+
+.score-card span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 1000;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.score-card strong {
+  display: block;
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.rank-card,
+.tips-card {
+  padding: 15px;
+}
+
+.rank-card h2,
+.tips-card h2 {
+  margin-bottom: 10px;
+  font-size: 1.15rem;
+}
+
+.rank-card ol {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.rank-card li {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.rank-card b {
+  color: var(--ink);
+}
+
+.tips-card p {
+  margin-bottom: 7px;
+  font-size: 0.88rem;
+}
+
+.arena-shell {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(8px, 1.8vw, 14px);
+  border-radius: 28px;
+}
+
+#arena {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  border-radius: 20px;
+  background: #8ed9ff;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.5), inset 0 0 46px rgba(15, 108, 171, 0.22);
+  touch-action: none;
+}
+
+.overlay {
+  position: absolute;
+  inset: 14px;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  border-radius: 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.74);
+  backdrop-filter: blur(10px);
+}
+
+.overlay[hidden] {
+  display: none;
+}
+
+.overlay h2 {
+  margin: 4px 0 8px;
+  color: #11365f;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  letter-spacing: -0.05em;
+}
+
+.overlay p {
+  max-width: 340px;
+  color: var(--muted);
+}
+
+.overlay button,
+#boost-button {
+  min-height: 44px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 999px;
+  color: #173045;
+  font-weight: 1000;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--yellow), var(--orange));
+  box-shadow: 0 12px 24px rgba(255, 148, 72, 0.25);
+}
+
+.touch-zone {
+  display: none;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 22px;
+}
+
+.joystick {
+  position: relative;
+  display: grid;
+  min-height: 104px;
+  place-items: center;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  touch-action: none;
+}
+
+.joystick span {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #c7ffff, #25b6dc);
+  box-shadow: 0 8px 24px rgba(19, 105, 145, 0.32);
+}
+
+.joystick b {
+  margin-top: 64px;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.ad-slot-bottom {
+  min-height: 100px;
+  margin-top: 14px;
+}
+
+@media (max-width: 980px) {
+  .hero,
+  .game-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .side-panel {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .side-panel:last-child {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .arena-page {
+    width: min(100% - 14px, 520px);
+  }
+
+  .hero {
+    padding: 20px;
+  }
+
+  .side-panel,
+  .side-panel:last-child {
+    grid-template-columns: 1fr;
+  }
+
+  .touch-zone {
+    display: grid;
+  }
+}
